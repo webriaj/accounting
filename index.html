@@ -57,13 +57,13 @@
                         <div class="form mb-3">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <input id="income-detail" type="text" placeholder="আয়ের বিবরণ">
+                                    <input  id="income-detail" type="text" placeholder="আয়ের বিবরণ" required>
                                 </div>
                                 <div class="col-md-3">
-                                    <input id="incamount" type="number" placeholder="পরিমান">
+                                    <input  id="incamount" type="number" placeholder="পরিমান" required>
                                 </div>
                                 <div class="col-md-3">
-                                    <button class="btn btn-primary" id="income-btn" onclick="income();">আপডেট </button> 
+                                    <button class="btn btn-primary" id="income-btn" onclick="income();" data-bs-toggle="modal" data-bs-target="#incomemodal">আপডেট </button> 
                                 </div>
                             </div>    
                         </div>
@@ -80,13 +80,13 @@
                         <div class="form mb-3">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <input id="ex-detail" type="text" placeholder="ব্যায়ের বিবরণ">
+                                    <input id="ex-detail" type="text" placeholder="ব্যায়ের বিবরণ" required>
                                 </div>
                                 <div class="col-md-3">
-                                    <input id="ex-amount" type="number" placeholder="পরিমান">
+                                    <input id="ex-amount" type="number" placeholder="পরিমান" required>
                                 </div>
                                 <div class="col-md-3">
-                                    <button class="btn btn-danger" id="income-btn" onclick="expense()">আপডেট </button> 
+                                    <button class="btn btn-danger" id="income-btn" onclick="expense()" data-bs-toggle="modal" data-bs-target="#exmodal">আপডেট </button> 
                                 </div>
                             </div>    
                         </div>
@@ -99,7 +99,45 @@
             </div>
         </div>
     </section>
+    <section>
+        <div class="container">
+            <div class="modal fade" id="incomemodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">হ্যালো ইউজার ! </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h4 id="modalTitle"></h4>
+                        <h4 id="modalprice"></h4>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">বন্ধ করুন</button>
+                    </div>
+                </div>
+                </div>
+            </div>
 
+            <div class="modal fade" id="exmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">হ্যালো ইউজার ! </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h4 id="modalTitleex"></h4>
+                        <h4 id="modalpriceex"></h4>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">বন্ধ করুন</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
     
     <!---------JavaScript-------------->
     <script src="js/bootstrap.bundle.min.js"></script>

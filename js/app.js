@@ -21,6 +21,9 @@ function expense(){
 
     document.getElementById("total-expense").innerHTML = parseFloat(totalExpense).toFixed(2);
 
+    document.getElementById("modalTitleex").innerHTML = "আপনার " + exDetails + " খরচ টি সফল ভাবে যোগ হয়েছে। "; 
+    document.getElementById("modalpriceex").innerHTML = "সর্বমোট " + exAmountnumber + " টাকা। "
+
     document.getElementById("ex-detail").value=" ";
     document.getElementById("ex-amount").value=" ";
 
@@ -44,6 +47,9 @@ function income(){
 
     let dueBalance = balanceNownum + incNumber;
     let dueB = parseFloat(dueBalance).toFixed(2);
+
+    document.getElementById("modalTitle").innerHTML = "আপনার " + incDetails + " ইনকাম টি সফল ভাবে যোগ হয়েছে। ";
+    document.getElementById("modalprice").innerHTML = "সর্বমোট " + incNumber + " টাকা। "
 
     document.getElementById("balance").innerHTML = dueB ;
     document.getElementById("income-detail").value=" ";
