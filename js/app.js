@@ -3,7 +3,11 @@ function expense(){
     var exDetails = document.getElementById("ex-detail").value; 
     var exAmount = document.getElementById("ex-amount").value;
     var exAmountnumber = parseFloat(exAmount);
-    var exlist = document.createTextNode (exDetails + " = " + exAmount + " Taka");
+
+    if(exAmountnumber < 0){
+        alert("Please Input Correct Value greater than 0")
+    }else{
+        var exlist = document.createTextNode (exDetails + " = " + exAmount + " Taka");
     var list = document.createElement("li");
     list.appendChild(exlist);
     document.getElementById("expense-list").appendChild(list);
@@ -26,6 +30,9 @@ function expense(){
 
     document.getElementById("ex-detail").value=" ";
     document.getElementById("ex-amount").value=" ";
+    }
+
+    
 
 }
 //Income Function
@@ -33,27 +40,35 @@ function income(){
     let incDetails = document.getElementById("income-detail").value;
     let incAmount = document.getElementById("incamount").value;
     let incNumber = parseFloat(incAmount);
-    let incList =  document.createTextNode (incDetails + " = " + incAmount + " Taka");
-    let inli = document.createElement ("li");
-    inli.appendChild(incList);
-    document.getElementById("income-list").appendChild(inli);
-    let balance = document.getElementById("prebalance").innerText;
-    let balanceAmount = parseFloat(balance);
-    let totalIncome = balanceAmount + incNumber;
-    document.getElementById("prebalance").innerText = parseFloat(totalIncome).toFixed(2) ;
+
+    if(incNumber<0){
+        alert("Please enter correct value greater than 0")
+    }else{
+        let incList =  document.createTextNode (incDetails + " = " + incAmount + " Taka");
+        let inli = document.createElement ("li");
+        inli.appendChild(incList);
+        document.getElementById("income-list").appendChild(inli);
+        let balance = document.getElementById("prebalance").innerText;
+        let balanceAmount = parseFloat(balance);
+        let totalIncome = balanceAmount + incNumber;
+        document.getElementById("prebalance").innerText = parseFloat(totalIncome).toFixed(2) ;
+        
+        let balancenow = document.getElementById("balance").innerText;
+        let balanceNownum = parseFloat (balancenow);
+
+        let dueBalance = balanceNownum + incNumber;
+        let dueB = parseFloat(dueBalance).toFixed(2);
+        document.getElementById("modalTitle").innerHTML = "আপনার " + incDetails + " ইনকাম টি সফল ভাবে যোগ হয়েছে। ";
+        document.getElementById("modalprice").innerHTML = "সর্বমোট " + incNumber + " টাকা। "
     
-    let balancenow = document.getElementById("balance").innerText;
-    let balanceNownum = parseFloat (balancenow);
+        document.getElementById("balance").innerHTML = dueB ;
+        document.getElementById("income-detail").value=" ";
+        document.getElementById("incamount").value = " " ;
+    }
 
-    let dueBalance = balanceNownum + incNumber;
-    let dueB = parseFloat(dueBalance).toFixed(2);
+    
 
-    document.getElementById("modalTitle").innerHTML = "আপনার " + incDetails + " ইনকাম টি সফল ভাবে যোগ হয়েছে। ";
-    document.getElementById("modalprice").innerHTML = "সর্বমোট " + incNumber + " টাকা। "
-
-    document.getElementById("balance").innerHTML = dueB ;
-    document.getElementById("income-detail").value=" ";
-    document.getElementById("incamount").value = " " ;
+   
 
 }
 
